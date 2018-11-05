@@ -1,0 +1,42 @@
+body {
+    background-image: url('./Images/Backgrounds/main.jpg');
+    background-size: 150vw;
+    background-repeat: none;
+    text-align: center;
+    font-size: 1em;
+    font-family: "Verdana";
+    padding: 0;
+}
+
+#logo {
+    width: 20vw;
+}
+
+.main {
+    margin: 5vh 0 5vh 0;
+    justify-content: center;
+}
+
+#start-button {
+    border: 0;
+    box-shadow: 0;
+    background: linear-gradient(to bottom, rgb(128, 129, 226), rgb(46, 0, 252));
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 1.3em;
+    border-radius: 5px;
+}
+
+.canvas {
+    display: flex;
+    justify-content: center;
+}
+
+#game-board {
+    float: right;
+    /* padding: 10vw;
+    margin-right: 23vw; */
+    background: url('./images/Backgrounds/canvas.png');
+    background-size: contain;
+    background-repeat: none;
+}
