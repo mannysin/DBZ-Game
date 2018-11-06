@@ -1,6 +1,6 @@
 // class Character {
 //   constructor(){
-//       this.dragonballs = [];
+//       this.score = 0;
 //       this.x = 0;
 //       this.y = 0;
 //       this.width = 40;
@@ -15,7 +15,6 @@
 
 class Goku{
   constructor(){
-    this.dragonballs = [];
     this.score = 0;
     this.x = 100;
     this.y = 400;
@@ -72,21 +71,22 @@ class Goku{
     theGame.obstacles.forEach((obstacle)=>{
       // need to calculate the top left, top right, bottom left, and bottom right corner of each object
       if(futureX < obstacle.x+obstacle.width && futureX+this.width > obstacle.x && futureY < obstacle.y+obstacle.height && futureY+this.height > obstacle.y ){
-        this.y = obstacle.y + obstacle.height + 5;
+        this.x = this.x - 1;
         result = false;
       }
     })
+    
     return result;
   }
 
-  dragonballCollison(gokuPosition, dragonballPosition){
-    let gokuPosition = this.x += this.y
-    let dragonballPosition = theGame.dragonballPosition.x += theGame.dragonballPosition.y
-    if (gokuPosition && dragonballPosition == true){
-      this.dragonballs.push(theGame.allDragonballs);
-      this.score++;
-    }
-  }
+  // dragonballCollison(gokuPosition, dragonballPosition){
+  //   let gokuPosition = this.x += this.y
+  //   let dragonballPosition = theGame.dragonballPosition.x += theGame.dragonballPosition.y
+  //   if (gokuPosition && dragonballPosition == true){
+  //     this.dragonballs.push(theGame.allDragonballs);
+  //     this.score++;
+  //   }
+  // }
 
 
  
@@ -94,7 +94,7 @@ class Goku{
 
 class Frieza{
   constructor(){
-    this.dragonballs = [];
+    this.score = 0
     this.x = 550;
     this.y = 400;
     this.width = 45;
@@ -162,6 +162,8 @@ class Dragonball{
     this.width =  25;
     this.height =  25;
     this.imgsrc = 'images/dragonballstar.png'
+    this.touched = false;
+    this.position = [this.x, this.y];
   }
 
   draw(){
@@ -174,6 +176,14 @@ class Dragonball{
     },3000)
   }
 
+  checkIfTouched(goku) {
+      // console.log("the x -------", goku.x);
+      // console.log("the y =======", goku.y);
+    if(this.x < goku.x+goku.width && this.x+this.width > goku.x && this.y < goku.y+goku.height && this.y+this.height > goku.y ){
+      this.touched = true;
+    }
+  } 
+
 }
 
 // class Obstacle{
@@ -184,20 +194,16 @@ class Dragonball{
 //     this.width =  45;
 //     this.height =  85;
 //     this.imgsrc = 'images/friezaarmy.png'
-//     this.moveDown();
 //   }
 
 //   draw(){
+//     setTimeout(()=>{
 //       let theImage = new Image();
 //       theImage.src = this.imgsrc;
 //       theImage.onload = ()=>{
 //       this.ctx.drawImage(theImage, this.x, this.y, this.width, this.height);
 //     }
+//     },3000)
 //   }
 
-//   moveDown(){
-//     setInterval(()=>{
-//       // this.y += 5;
-//     },1000)
-//   }
 // }
