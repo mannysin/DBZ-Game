@@ -20,11 +20,11 @@ class Game{
       // this.spawnObstacle();
 
       this.drawEverything();
-    },200)
+    }, 200)
   }
 
   // spawnObstacle(){
-  //   let rando = Math.floor(Math.random()*50)
+  //   let rando = Math.floor(Math.random()*20)
   //   if(rando === 5){
   //     this.obstacles.push(new Obstacle())
   //   }
@@ -60,8 +60,7 @@ document.onkeydown = function(e){
   }
   if(!keysBeingPressed.includes(e.key)){
     keysBeingPressed.push(e.key);
-  }
-   
+  } 
 }
 
 document.onkeyup = function(e){

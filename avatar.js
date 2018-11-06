@@ -65,7 +65,7 @@ class Goku{
 
   canMove(futureX, futureY){
     let result = true;
-    if(futureX < 0 || futureX > 800 || futureY < 0 || futureY > 600 ){
+    if(futureX < 0 || futureX > 800 || futureY < 0 || futureY > 480 ){
       result = false;
     } 
 
@@ -120,25 +120,25 @@ class Frieza{
   // moveTowards(){
   //   this.canMove(this.x, this.y)
     
-  //   if(keysBeingPressed.includes("ArrowUp")){
+  //   if(keysBeingPressed.includes("87")){
   //     if(this.canMove(this.x, this.y-10)){
   //       this.y -= 10;
   //     } 
   //   }
-  //   if(keysBeingPressed.includes("ArrowDown")){
+  //   if(keysBeingPressed.includes("83")){
 
   //     if(this.canMove(this.x, this.y+10)){
   //     this.y += 10;
   //     }
   //   }
 
-  //   if(keysBeingPressed.includes("ArrowLeft")){
+  //   if(keysBeingPressed.includes("65")){
   //     if(this.canMove(this.x-10, this.y)){
   //     this.x -= 10; 
   //     }
   //   }
 
-  //   if(keysBeingPressed.includes("ArrowRight")){
+  //   if(keysBeingPressed.includes("68")){
   //     if(this.canMove(this.x+10, this.y)){
   //     this.x += 10; 
   //     }
@@ -147,7 +147,7 @@ class Frieza{
 
   // canMove(futureX, futureY){
   //   let result = true;
-  //   if(futureX < 0 || futureX > 550 || futureY < 0 || futureY > 340 ){
+  //   if(futureX < 0 || futureX > 800 || futureY < 0 || futureY > 480 ){
   //     result = false;
   //   } 
  
@@ -157,27 +157,23 @@ class Frieza{
 class Dragonball{
   constructor(){
     this.ctx = document.getElementById('game-board').getContext('2d');
-    this.x = Math.floor(Math.random() * 500)
+    this.x = Math.floor(Math.random() * 600)
     this.y = Math.floor(Math.random() * 300)
     this.width =  25;
     this.height =  25;
     this.imgsrc = 'images/dragonballstar.png'
-    this.moveDown();
   }
 
   draw(){
+    setTimeout(()=>{
       let theImage = new Image();
       theImage.src = this.imgsrc;
       theImage.onload = ()=>{
       this.ctx.drawImage(theImage, this.x, this.y, this.width, this.height);
-    }
+      }
+    },3000)
   }
 
-  moveDown(){
-    setInterval(()=>{
-      // this.y += 5;
-    },200)
-  }
 }
 
 // class Obstacle{
@@ -204,59 +200,4 @@ class Dragonball{
 //       // this.y += 5;
 //     },1000)
 //   }
-// }
-
-// class Goku {
-//     constructor(){
-//         this.dragonballs = [];
-//         this.x = 100;
-//         this.y = 100;
-//         this.width = 45;
-//         this.height = 85;
-//         this.imgsrc = './Goku2.png';
-//         this.ctx = document.getElementById('game-board').getContext('2d');
-//     }
-
-//     draw(){ 
-//         let gokuImage = new Image();
-//         gokuImage.src = this.imgsrc;
-
-//         gokuImage.onload = () => {
-//         this.ctx.drawImage(gokuImage, this.x, this.y, this.width, this.height);
-//         } 
-//     }
-
-// }
-
-// class Goku extends Character {
-//     constructor(){
-//         this.imgsrc = './images/sprites/gokuMain.png';
-
-
-//     }
-    
-//     move(){
-
-
-//     }
-
-//     crashCollusion(){
-
-
-//     }
-
-
-// }
-
-// class Frieza extends Character {
-//     constructor(){
-
-//     }
-
-//     autoMove(){
-
-        
-//     }
-
-
 // }
