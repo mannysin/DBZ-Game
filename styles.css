@@ -57,6 +57,7 @@ body {
     float: right;
     /* padding: 10vw;
     margin-right: 23vw; */
+    background-color: blue;
     background: url('./images/Backgrounds/canvas.png');
     background-size: contain;
     background-repeat: none;
