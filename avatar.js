@@ -23,14 +23,14 @@ class Goku{
     this.xArray = [];
     this.yArray = [];
     // this.directionArray = [];
-    this.imgsrc = './images/goku2.png'
+    this.theSrc = './images/goku2.png'
     this.ctx = document.getElementById('game-board').getContext('2d');
   }
 
 
   draw(){
     let theImage = new Image();
-    theImage.src = this.imgsrc;
+    theImage.src = this.theSrc;
     theImage.onload = ()=>{
       this.ctx.drawImage(theImage, this.x, this.y, this.width, this.height);
     }
