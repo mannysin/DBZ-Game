@@ -97,6 +97,7 @@ class Frieza{
     this.y = 400;
     this.width = 45;
     this.height = 85;
+    this.moveDirection = "left";
     this.imgsrc = './images/frieza.png'
     this.ctx = document.getElementById('game-board').getContext('2d');
 
@@ -116,19 +117,33 @@ class Frieza{
     
     let nextPosition = this.canMove(this.x, this.y)
     if (this.canMove(this.x, this.y)) {
-      this.x = this.x - Math.floor(Math.random() + 15);
-      this.y = this.y - Math.floor(Math.random() * 10);
-      return nextPosition
+      if(this.x > 20 && this.y > 20 && this.moveDirection === "left"){
+        console.log(this.x)
+        if(this.x < 30) {
+          this.moveDirection = 'right';
+        }
+        this.x -= Math.floor(Math.random() + 15);
+        this.y -= Math.floor(Math.random() * 10);
+        return nextPosition  
+      } else if (this.x < 760 && this.y < 480 && this.moveDirection === "right") {
+        if(this.x > 740) {
+          this.moveDirection = 'left';
+        }
+        this.x += Math.floor(Math.random() + 15);
+        this.y += Math.floor(Math.random() * 10);
+        return nextPosition
+      }
+        
     } 
     // else if {
     //   this.x = this.x + Math.floor(Math.random() * 10);
     //   this.y = this.y + Math.floor(Math.random() * 15);
     // }
     
-    if (nextPosition) {
-      this.x = this.x + Math.floor(Math.random() * 10);
-      this.y = this.y + Math.floor(Math.random() + 15);
-    }
+    // if (nextPosition) {
+    //   this.x = this.x + Math.floor(Math.random() * 10);
+    //   this.y = this.y + Math.floor(Math.random() + 15);
+    // }
   }
   
   
