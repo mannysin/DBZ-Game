@@ -126,7 +126,7 @@ class Frieza{
         this.y -= Math.floor(Math.random() * 10);
         return nextPosition  
       } else if (this.x < 760 && this.y < 480 && this.moveDirection === "right") {
-        if(this.x > 740) {
+        if(this.x > 740 ) {
           this.moveDirection = 'left';
         }
         this.x += Math.floor(Math.random() + 15);

@@ -1,6 +1,11 @@
+window.onload = function(){
+$('.main').hide();
+
+}
+
 $('.btn-story').click(()=>{
   $('.story').toggle();
-  // $('.main').toggle();
+  $('.main').toggle();
 })
 
 let keysBeingPressed = [];
@@ -23,7 +28,7 @@ class Game{
       this.goku.move();
 
       this.frieza.moveTowards();
-      // this.frieza.checkIfTouched();
+      this.frieza.checkIfTouched(this.goku);
 
       if(this.counter < 7) {
         this.addDragonball();
