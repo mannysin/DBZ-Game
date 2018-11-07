@@ -1,5 +1,5 @@
 body {
-    background-image: url('./Images/Backgrounds/main.jpg');
+    background-image: url('./images/Backgrounds/main.jpg');
     background-size: 150vw;
     background-repeat: none;
     text-align: center;
@@ -58,7 +58,7 @@ body {
     /* padding: 10vw;
     margin-right: 23vw; */
     background-color: blue;
-    background: url('./Images/Backgrounds/canvas.png');
+    background: url('./images/Backgrounds/canvas.png');
     background-size: contain;
     background-repeat: none;
 }
