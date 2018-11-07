@@ -35,7 +35,7 @@ body {
 .main {
     margin: 5vh 0 5vh 0;
     justify-content: center;
-    display: hidden;
+    /* display: hidden; */
 }
 
 #start-button {

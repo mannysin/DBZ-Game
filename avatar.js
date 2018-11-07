@@ -23,7 +23,7 @@ class Goku{
     this.xArray = [];
     this.yArray = [];
     // this.directionArray = [];
-    this.imgsrc = 'images/goku2.png'
+    this.imgsrc = './images/goku2.png'
     this.ctx = document.getElementById('game-board').getContext('2d');
   }
 
@@ -97,7 +97,7 @@ class Frieza{
     this.y = 400;
     this.width = 45;
     this.height = 85;
-    this.imgsrc = 'images/frieza.png'
+    this.imgsrc = './images/frieza.png'
     this.ctx = document.getElementById('game-board').getContext('2d');
 
   }
@@ -113,9 +113,21 @@ class Frieza{
 
   moveTowards() {
     // this.checkIfTouched(goku);
+    
+    let nextPosition = this.canMove(this.x, this.y)
     if (this.canMove(this.x, this.y)) {
-      this.x = this.x - Math.floor(Math.random() * 10);
+      this.x = this.x - Math.floor(Math.random() + 15);
       this.y = this.y - Math.floor(Math.random() * 10);
+      return nextPosition
+    } 
+    // else if {
+    //   this.x = this.x + Math.floor(Math.random() * 10);
+    //   this.y = this.y + Math.floor(Math.random() * 15);
+    // }
+    
+    if (nextPosition) {
+      this.x = this.x + Math.floor(Math.random() * 10);
+      this.y = this.y + Math.floor(Math.random() + 15);
     }
   }
   
@@ -200,7 +212,7 @@ class Frieza{
   
   checkIfTouched(goku) {
     if(this.x < goku.x+goku.width && this.x+this.width > goku.x && this.y < goku.y+goku.height && this.y+this.height > goku.y){
-      alert("You have been captured by Lord Frieza...It is a dark day for human kind.");
+      alert("You have been captured by Lord Frieza...It is a dark day for mankind.");
     }
   } 
  
@@ -214,7 +226,7 @@ class Dragonball{
     this.y = Math.floor(Math.random() * 300)
     this.width =  25;
     this.height =  25;
-    this.imgsrc = 'images/dragonballstar.png'
+    this.imgsrc = './images/dragonballstar.png'
     this.touched = false;
     this.position = [this.x, this.y];
     this.draw();
@@ -245,7 +257,7 @@ class Obstacle{
     this.y = Math.floor(Math.random() * 300)
     this.width =  45;
     this.height =  85;
-    this.imgsrc = 'images/friezaarmy.png'
+    this.imgsrc = './images/friezaarmy.png'
   }
 
   draw(){
@@ -255,7 +267,7 @@ class Obstacle{
       theImage.onload = ()=>{
       this.ctx.drawImage(theImage, this.x, this.y, this.width, this.height);
     }
-    },3000)
+    },1000)
   }
 
   checkIfTouched(goku) {

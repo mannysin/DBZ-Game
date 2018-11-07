@@ -39,7 +39,7 @@ class Game{
           this.removeDragonball(this.allDragonballs.indexOf(oneBall))
         }
         if(this.goku.score === 7){
-          alert("Congratulations, you saved the Human race!");
+          alert("Congratulations, you saved mankind!");
         }
       })
 
