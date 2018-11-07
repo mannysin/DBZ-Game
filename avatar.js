@@ -23,7 +23,7 @@ class Goku{
     this.xArray = [];
     this.yArray = [];
     // this.directionArray = [];
-    this.theSrc = './images/goku2.png'
+    this.theSrc = './images/Goku2.png'
     this.ctx = document.getElementById('game-board').getContext('2d');
   }
 
@@ -97,7 +97,7 @@ class Frieza{
     this.y = 400;
     this.width = 45;
     this.height = 85;
-    this.imgsrc = './images/frieza.png'
+    this.imgsrc = './images/Frieza.png'
     this.ctx = document.getElementById('game-board').getContext('2d');
 
   }
@@ -226,7 +226,7 @@ class Dragonball{
     this.y = Math.floor(Math.random() * 300)
     this.width =  25;
     this.height =  25;
-    this.imgsrc = './images/dragonballstar.png'
+    this.imgsrc = './images/Dragonballstar.png'
     this.touched = false;
     this.position = [this.x, this.y];
     this.draw();
@@ -257,7 +257,7 @@ class Obstacle{
     this.y = Math.floor(Math.random() * 300)
     this.width =  45;
     this.height =  85;
-    this.imgsrc = './images/friezaarmy.png'
+    this.imgsrc = './images/Friezaarmy.png'
   }
 
   draw(){
