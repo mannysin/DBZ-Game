@@ -8,6 +8,26 @@ body {
     padding: 0;
 }
 
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#story-pic {
+    border: 5px solid blue;
+  }
+
+.btn-story {
+    border: 0;
+    box-shadow: 0;
+    background: linear-gradient(to bottom, rgb(128, 129, 226), rgb(46, 0, 252));
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 1.3em;
+    border-radius: 5px;
+}
+
 #logo {
     width: 20vw;
 }
@@ -15,6 +35,7 @@ body {
 .main {
     margin: 5vh 0 5vh 0;
     justify-content: center;
+    display: hidden;
 }
 
 #start-button {
