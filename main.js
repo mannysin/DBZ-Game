@@ -50,7 +50,7 @@ class Game{
           setTimeout(()=>{
             this.goku.theSrc = './images/ssjgoku2.png';
             alert("Congratulations, you saved mankind!");
-          },550)
+          },5)
         }
       })
 
