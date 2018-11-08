@@ -87,8 +87,8 @@ class Frieza{
     this.score = 0
     this.x = 550;
     this.y = 400;
-    this.width = 45;
-    this.height = 85;
+    this.width = 35;
+    this.height = 75;
     this.moveDirection = "left";
     this.imgsrc = './images/frieza.png'
     this.ctx = document.getElementById('game-board').getContext('2d');
@@ -107,21 +107,24 @@ class Frieza{
     let nextPosition = this.canMove(this.x, this.y)
     if (this.canMove(this.x, this.y)) {
       if(this.x > 20 && this.y > 20 && this.moveDirection === "left"){
+        this.imgsrc = './images/friezamoveleft.png'
         if(this.x < 30) {
+          this.imgsrc = './images/friezamoveright.png'
           this.moveDirection = 'right';
         }
         this.x -= Math.floor(Math.random() + 15);
-        this.y -= Math.floor(Math.random() * 10);
+        this.y -= Math.floor(Math.random() * 9);
         return nextPosition  
       } else if (this.x < 760 && this.y < 480 && this.moveDirection === "right") {
-        if(this.x > 740) {
+        if(this.x > 740 ) {
+          this.imgsrc = './images/friezamoveleft.png'
           this.moveDirection = 'left';
         }
         this.x += Math.floor(Math.random() + 15);
-        this.y += Math.floor(Math.random() - 10);
+        this.y += Math.floor(Math.random() * 5);
         return nextPosition
-      }        
-    } 
+      }
+    }
   } //end of frieza movement
   
   canMove(futureX, futureY){
@@ -133,7 +136,9 @@ class Frieza{
   
   checkIfTouched(goku) {
     if(this.x < goku.x+goku.width && this.x+this.width > goku.x && this.y < goku.y+goku.height && this.y+this.height > goku.y){
-      alert("You have been captured by Lord Frieza...It is a dark day for mankind.");
+      setTimeout(()=>{
+        alert("You have been captured by Lord Frieza...It is a dark day for mankind.");
+      },200)
     }
   } //end of frieza collusion check
  

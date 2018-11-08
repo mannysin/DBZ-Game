@@ -47,8 +47,11 @@ class Game{
         //   this.goku.theSrc = './images/ssjgoku.png';
         // }
         if(this.goku.score === 7){
-          this.goku.theSrc = './images/ssjgoku.png';
-          alert("Congratulations, you saved mankind!");
+          this.goku.theSrc = './images/ssjgoku2.png';
+          setTimeout(()=>{
+            // this.goku.theSrc = './images/ssjgoku2.png';
+            alert("Congratulations, you saved mankind!");
+          },550)
         }
       })
 
