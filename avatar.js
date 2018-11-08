@@ -193,7 +193,7 @@ class Obstacle{
       theImage.onload = ()=>{
       this.ctx.drawImage(theImage, this.x, this.y, this.width, this.height);
     }
-    },500)
+    },10)
   }
 
   checkIfTouched(goku) {
