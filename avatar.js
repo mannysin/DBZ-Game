@@ -87,7 +87,7 @@ class Frieza{
     this.score = 0
     this.x = 550;
     this.y = 400;
-    this.width = 35;
+    this.width = 40;
     this.height = 75;
     this.moveDirection = "left";
     this.imgsrc = './images/frieza.png'
@@ -137,7 +137,7 @@ class Frieza{
   checkIfTouched(goku) {
     if(this.x < goku.x+goku.width && this.x+this.width > goku.x && this.y < goku.y+goku.height && this.y+this.height > goku.y){
       setTimeout(()=>{
-        alert("You have been captured by Lord Frieza...It is a dark day for mankind.");
+        alert("You have been captured by Lord Frieza...all hail Lord Frieza.");
       },200)
     }
   } //end of frieza collusion check

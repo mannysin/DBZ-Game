@@ -4,13 +4,15 @@ $('.main').hide();
 }
 
 $('.btn-story').click(()=>{
+  menuMusic.play();
   $('.story').toggle();
   $('.main').toggle();
 })
 
 let keysBeingPressed = [];
 let theGame;
-// let gameMusic = new Audio('rockthedragon.mp3')
+let menuMusic = new Audio('nameksong.mp3')
+let gameMusic = new Audio('chala.mp3')
 
 
 class Game{
@@ -43,13 +45,10 @@ class Game{
           this.goku.score += 1;
           this.removeDragonball(this.allDragonballs.indexOf(oneBall))
         }
-        // if(this.goku.score === 6){
-        //   this.goku.theSrc = './images/ssjgoku.png';
-        // }
         if(this.goku.score === 7){
           this.goku.theSrc = './images/ssjgoku2.png';
           setTimeout(()=>{
-            // this.goku.theSrc = './images/ssjgoku2.png';
+            this.goku.theSrc = './images/ssjgoku2.png';
             alert("Congratulations, you saved mankind!");
           },550)
         }
@@ -108,11 +107,12 @@ document.getElementById("start-button").onclick = function() {
 
 
 function startGame() {
+  menuMusic.pause();
   theGame = new Game();
   theGame.goku = new Goku();
   theGame.frieza = new Frieza();
   theGame.dragonball = new Dragonball();
-  // gameMusic.play();
+  gameMusic.play();
 }
 
 document.onkeydown = function(e){
