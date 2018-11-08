@@ -50,7 +50,7 @@ class Game{
           setTimeout(()=>{
             this.goku.theSrc = './images/ssjgoku2.png';
             alert("Congratulations, you saved mankind!");
-          },5)
+          },550)
         }
       })
 
@@ -63,7 +63,7 @@ class Game{
       })
 
       this.drawEverything();
-    }, 200)
+    }, 100)
   }
 
   addDragonball(){
@@ -76,7 +76,7 @@ class Game{
   }
 
   spawnObstacle(){
-    let rando = Math.floor(Math.random()*30)
+    let rando = Math.floor(Math.random()*20)
     if(rando === 5){
       this.obstacles.push(new Obstacle())
     }
