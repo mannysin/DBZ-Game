@@ -10,7 +10,7 @@ $('.btn-story').click(()=>{
 
 let keysBeingPressed = [];
 let theGame;
-
+// let gameMusic = new Audio('rockthedragon.mp3')
 
 
 class Game{
@@ -43,7 +43,11 @@ class Game{
           this.goku.score += 1;
           this.removeDragonball(this.allDragonballs.indexOf(oneBall))
         }
+        // if(this.goku.score === 6){
+        //   this.goku.theSrc = './images/ssjgoku.png';
+        // }
         if(this.goku.score === 7){
+          this.goku.theSrc = './images/ssjgoku.png';
           alert("Congratulations, you saved mankind!");
         }
       })
@@ -105,6 +109,7 @@ function startGame() {
   theGame.goku = new Goku();
   theGame.frieza = new Frieza();
   theGame.dragonball = new Dragonball();
+  // gameMusic.play();
 }
 
 document.onkeydown = function(e){
