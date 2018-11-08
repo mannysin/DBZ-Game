@@ -83,6 +83,7 @@ class Game{
   }
 
   removeObstacle(position) {
+    this.obstacles.imgsrc = './images/ssjgoku2.png';
     this.obstacles.splice(position, 1)
   }
 
