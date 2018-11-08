@@ -50,9 +50,11 @@ class Game{
           setTimeout(()=>{
             this.goku.theSrc = './images/ssjgoku2.png';
             alert("Congratulations, you saved mankind!");
-          },550)
+          },450)
         }
       })
+
+      // this.spawnObstacle();
 
       this.obstacles.forEach((oneEnemy) => {
         oneEnemy.checkIfTouched(this.goku)
@@ -63,7 +65,7 @@ class Game{
       })
 
       this.drawEverything();
-    }, 100)
+    }, 150)
   }
 
   addDragonball(){

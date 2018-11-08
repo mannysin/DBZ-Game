@@ -138,7 +138,7 @@ class Frieza{
     if(this.x < goku.x+goku.width && this.x+this.width > goku.x && this.y < goku.y+goku.height && this.y+this.height > goku.y){
       setTimeout(()=>{
         alert("You have been captured by Lord Frieza...all hail Lord Frieza.");
-      },200)
+      },100)
     }
   } //end of frieza collusion check
  
@@ -179,7 +179,7 @@ class Dragonball{
 class Obstacle{
   constructor(){
     this.ctx = document.getElementById('game-board').getContext('2d');
-    this.x = Math.floor(Math.random() * 500)
+    this.x = Math.floor(Math.random() * 600)
     this.y = Math.floor(Math.random() * 300)
     this.width =  45;
     this.height =  85;
@@ -193,7 +193,7 @@ class Obstacle{
       theImage.onload = ()=>{
       this.ctx.drawImage(theImage, this.x, this.y, this.width, this.height);
     }
-    },1000)
+    },500)
   }
 
   checkIfTouched(goku) {
